@@ -1,0 +1,8 @@
+transformers==4.49.0
+accelerate==1.4.0
+scikit-learn==1.6.1
+sentencepiece==0.2.0
+evaluate==0.4.3
+tokenizers==0.21.0
+torch==2.5.1+cu124
+torchvision==0.20.1+cu124
