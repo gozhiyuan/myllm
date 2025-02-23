@@ -85,7 +85,8 @@ optimizer = Adam(model.parameters(), lr=2e-5)
 def evaluate(ddp_model, ddp_valid_loader):
     ddp_model.eval()
     acc_num = 0
-    with torch.inference_mode():
+    # with torch.inference_mode():
+    with torch.no_grad():   # torch.inference_mode() will raise error for deepspeed zero3 training. See in the deepspeed notebook
         for batch in ddp_valid_loader:
             output = ddp_model(**batch)
             pred = torch.argmax(output.logits, dim=-1)
@@ -95,7 +96,7 @@ def evaluate(ddp_model, ddp_valid_loader):
     return acc_num / len(ddp_valid_loader.dataset)
 
 # Training function with local variable renaming
-def train(epochs=3, log_step=100):
+def train(epochs=3, log_step=10):
     global_step = 0
     # Prepare for distributed training, renaming the local variables
     ddp_model, ddp_optimizer, ddp_train_loader, ddp_valid_loader = accelerator.prepare(

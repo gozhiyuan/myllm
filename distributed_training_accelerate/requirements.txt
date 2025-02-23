@@ -6,3 +6,4 @@ evaluate==0.4.3
 tokenizers==0.21.0
 torch==2.5.1+cu124
 torchvision==0.20.1+cu124
+deepspeed==0.16.4
