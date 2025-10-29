@@ -10,6 +10,25 @@ Each folder contains a standalone project or tutorial.
 
 Here are the projects currently available. This collection is actively maintained and expanded.
 
+### [minimum_language_model](./minimum_language_model/)
+
+A from-scratch implementation of a Transformer-based language model, covering every component from the ground up. This project provides a deep dive into the fundamental building blocks of modern LLMs.
+
+**Core Concepts Covered:**
+*   **BPE Tokenizer**: Building a tokenizer with parallel processing and memory-efficient streaming.
+*   **Transformer Architecture**: Implementing core components like RoPE, Multi-Head Attention, and SwiGLU.
+*   **Training & Optimization**: A from-scratch AdamW optimizer, learning rate scheduling, and a full training loop with checkpointing.
+*   **Text Generation**: Advanced sampling methods including temperature scaling and nucleus (top-p) sampling.
+
+### [triton_and_distributed_training](./triton_and_distributed_training/)
+
+A deep dive into optimizing and scaling Transformer models using advanced systems techniques. This project covers both low-level kernel optimization with Triton and high-level distributed training strategies.
+
+**Core Concepts Covered:**
+*   **Performance Engineering**: In-depth profiling, benchmarking mixed-precision (BF16) training, and analyzing attention performance.
+*   **Custom Kernels with Triton**: A from-scratch implementation of a high-performance `weighted_sum` CUDA kernel.
+*   **Distributed Data Parallel (DDP)**: A step-by-step implementation of four DDP strategies, from a naive baseline to an optimized, bucketed approach that overlaps communication and computation.
+
 ### [distributed_training_accelerate](./distributed_training_accelerate/)
 
 A comprehensive guide to distributed model training in PyTorch. This project provides a series of hands-on examples that progress from basic single-GPU training to advanced, large-scale distributed setups using industry-standard tools.
