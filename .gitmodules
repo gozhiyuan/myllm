@@ -1,3 +1,7 @@
 [submodule "minimum_language_model"]
 	path = minimum_language_model
-	url = https://github.com/gozhiyuan/assignment1-basics.git
+	url = https://github.com/gozhiyuan/build-llm-from-scratch
+
+[submodule "triton_and_distributed_training"]
+	path = triton_and_distributed_training
+	url = https://github.com/gozhiyuan/triton-and-distributed-training
